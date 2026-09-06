@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arihant Foundation — Empowering Communities. Upholding Justice.</title>
+<meta name="description" content="Arihant Foundation is a nonprofit in Chhatrapati Sambhajinagar (Aurangabad), Maharashtra, founded by Adv. Sangeeta Desarda — empowering women and children and building a sustainable, just and equitable world.">
+<link rel="icon" type="image/png" href="assets/images/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#251b15;
+    --ink-soft:#6b5d52;
+    --paper:#faf6ef;
+    --paper-2:#f3ecdf;
+    --surface:#fffdf9;
+    --brick:#a93a2e;         /* from the official logo */
+    --brick-deep:#7e2a20;
+    --forest:#3d6b52;
+    --gold:#b98a44;
+    --hairline:#e4d9c8;
+    --shadow:0 14px 40px rgba(60,38,24,.12);
+    --shadow-sm:0 5px 18px rgba(60,38,24,.08);
+    --maxw:1120px;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Work Sans',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);font-weight:400;color:var(--ink);background:var(--paper);line-height:1.75;font-size:16.5px;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:.002em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  .eyebrow{font-family:var(--sans);font-weight:600;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brick)}
+  .eyebrow.gold{color:var(--gold)}
+  .rule{width:44px;height:1px;background:var(--gold);margin:1.1rem 0 1.3rem}
+  .rule.center{margin-left:auto;margin-right:auto}
+
+  .btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding:1rem 1.7rem;border-radius:8px;transition:all .18s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--brick);color:#fff}
+  .btn-primary:hover{background:var(--brick-deep);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--hairline)}
+  .btn-ghost:hover{border-color:var(--brick);color:var(--brick)}
+
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:.8rem;font-family:var(--serif);font-weight:600;font-size:1.32rem;letter-spacing:.01em}
+  .brand img{height:42px;width:auto;flex:none}
+  .nav-links{display:flex;gap:2rem;align-items:center}
+  .nav-links a{font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .nav-links a:hover{color:var(--brick)}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .menu-btn{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink)}
+  @media(max-width:960px){
+    .nav-links{display:none}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:78px;left:0;right:0;background:var(--paper);padding:1.4rem 28px;gap:1.2rem;border-bottom:1px solid var(--hairline)}
+    .menu-btn{display:block}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;background:
+    radial-gradient(1100px 480px at 85% -8%, #f6e3d7 0%, transparent 58%),
+    radial-gradient(800px 460px at -5% 108%, #e9efe6 0%, transparent 55%),
+    var(--paper)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;padding:92px 0 104px}
+  .hero h1{font-size:clamp(2.6rem,5.4vw,4rem);margin:1.2rem 0 1.4rem}
+  .hero h1 em{font-style:italic;color:var(--brick)}
+  .hero .lead{font-size:1.1rem;font-weight:300;color:var(--ink-soft);max-width:44ch;line-height:1.85}
+  .hero-cta{display:flex;gap:1rem;margin-top:2.4rem;flex-wrap:wrap}
+  .hero-facts{margin-top:3rem;display:flex;gap:2.6rem;color:var(--ink-soft);font-size:.82rem;letter-spacing:.04em}
+  .hero-facts strong{display:block;font-family:var(--serif);font-weight:600;font-size:1.9rem;color:var(--ink);line-height:1.1}
+
+  .hero-stage{position:relative;padding:0 0 74px 0}
+  .hero-main{position:relative;width:min(88%,430px);margin-left:auto;border-radius:4px;overflow:hidden;box-shadow:var(--shadow)}
+  .hero-main img{width:100%;aspect-ratio:1/1;object-fit:cover}
+  .sdg-bar{position:absolute;top:0;left:0;right:0;height:6px;z-index:2;background:linear-gradient(90deg,#e5243b,#dda63a,#4c9f38,#c5192d,#ff3a21,#26bde2,#fcc30b,#a21942,#fd6925,#dd1367,#fd9d24,#c9992d,#48773e,#0a97d9,#56c02b,#00689d,#19486a)}
+  .hero-small{position:absolute;left:0;bottom:22px;width:44%;max-width:210px;border-radius:4px;overflow:hidden;border:5px solid var(--paper);box-shadow:var(--shadow-sm)}
+  .hero-small img{width:100%;aspect-ratio:1/1;object-fit:cover}
+  .hero-quote{position:absolute;right:0;bottom:0;background:var(--surface);border:1px solid var(--hairline);border-radius:4px;box-shadow:var(--shadow-sm);padding:16px 22px;max-width:300px}
+  .hero-quote p{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.45;color:var(--ink)}
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:44px;padding:56px 0 72px}
+    .hero-main{margin:0 auto}
+    .hero-stage{max-width:480px;margin:0 auto;width:100%}
+  }
+
+  /* ---------- shared sections ---------- */
+  section{padding:104px 0}
+  .head{max-width:660px;margin-bottom:56px}
+  .head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .head h2{font-size:clamp(2rem,3.8vw,2.9rem);margin-top:1rem}
+  .head p{color:var(--ink-soft);font-weight:300;font-size:1.06rem;margin-top:1rem}
+  .alt{background:var(--paper-2)}
+
+  /* belief */
+  .belief{padding:110px 0}
+  .belief p.big{font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.42;text-align:center;max-width:880px;margin:0 auto;color:var(--ink)}
+  .belief p.big em{font-style:italic;color:var(--brick)}
+  .belief .sub{max-width:640px;margin:2rem auto 0;text-align:center;color:var(--ink-soft);font-weight:300}
+
+  /* story */
+  .story-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:start}
+  .story-grid h2{font-size:clamp(2rem,3.8vw,2.8rem);margin:1rem 0 1.6rem}
+  .story-grid p{color:var(--ink-soft);font-weight:300;margin-bottom:1.3rem}
+  .story-grid p strong{color:var(--ink);font-weight:500}
+  .drop::first-letter{font-family:var(--serif);font-weight:600;font-size:3.4em;float:left;line-height:.82;padding:.06em .12em 0 0;color:var(--brick)}
+  .founder-panel{background:var(--surface);border:1px solid var(--hairline);border-radius:4px;box-shadow:var(--shadow-sm);padding:44px 38px;position:sticky;top:110px;text-align:center}
+  .founder-panel .monogram{width:64px;height:64px;margin:0 auto 1.6rem;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);font-weight:600;font-size:1.5rem;color:var(--brick)}
+  .founder-panel blockquote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.45rem;line-height:1.5;color:var(--ink)}
+  .founder-panel .who{margin-top:1.8rem;padding-top:1.5rem;border-top:1px solid var(--hairline)}
+  .founder-panel .name{font-family:var(--sans);font-weight:600;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+  .founder-panel .role{font-size:.82rem;color:var(--ink-soft);margin-top:.35rem;font-weight:300}
+  .note{font-size:.74rem;color:var(--gold);border:1px dashed #dcc79f;border-radius:4px;padding:.45rem .7rem;display:inline-block;margin-top:1.2rem;background:#fdf9f0}
+  .founder-photo2{border-radius:4px;overflow:hidden;margin-bottom:1.7rem}
+  .founder-photo2 img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 14%}
+
+  /* leadership */
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;max-width:880px;margin:0 auto;text-align:center}
+  .team figure{margin:0}
+  .team .pic{width:154px;height:154px;border-radius:50%;overflow:hidden;margin:0 auto 1.2rem;border:1px solid var(--gold);padding:5px;background:var(--surface);box-shadow:var(--shadow-sm)}
+  .team .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;border-radius:50%}
+  .team .nm{font-family:var(--sans);font-weight:600;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+  .team .rl{font-size:.84rem;color:var(--ink-soft);font-weight:300;margin-top:.3rem}
+  .team .qt{font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.55;color:var(--ink);margin:1rem auto 0;max-width:280px}
+  .team .qt::before{content:"";display:block;width:26px;height:1px;background:var(--gold);margin:0 auto .8rem}
+  @media(max-width:640px){.team{grid-template-columns:1fr;gap:30px}}
+  @media(max-width:960px){.story-grid{grid-template-columns:1fr;gap:40px}.founder-panel{position:static}}
+
+  /* quote band */
+  .band{background:linear-gradient(150deg,var(--brick),var(--brick-deep));color:#fff;padding:110px 0;text-align:center}
+  .band blockquote{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.8rem,4vw,3rem);line-height:1.35;max-width:900px;margin:0 auto}
+  .band .attr{margin-top:2.2rem;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:#eec9ba}
+
+  /* work / pillars */
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--hairline);border-left:1px solid var(--hairline)}
+  .work-item{border-right:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:42px 34px;background:var(--surface);transition:background .2s}
+  .work-item:hover{background:#fdf8ef}
+  .work-item .no{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--gold);letter-spacing:.06em}
+  .work-item h3{font-size:1.55rem;margin:.7rem 0 .7rem}
+  .work-item p{color:var(--ink-soft);font-weight:300;font-size:.95rem;line-height:1.7}
+  @media(max-width:960px){.work-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.work-grid{grid-template-columns:1fr}}
+
+  /* field story */
+  .field{display:grid;grid-template-columns:.92fr 1.08fr;gap:70px;align-items:center}
+  .field-photo{position:relative;border-radius:4px;overflow:hidden;box-shadow:var(--shadow)}
+  .field-photo img{width:100%;aspect-ratio:1/1;object-fit:cover}
+  .field-photo .cap{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 14px;font-size:.78rem;letter-spacing:.06em;color:#fff;background:linear-gradient(transparent,rgba(30,18,10,.75))}
+  .field .kicker{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--forest);border:1px solid #cfdcCF;border-radius:999px;padding:.4rem 1rem;margin-bottom:1.4rem;background:#eef3ec}
+  .field h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:1.4rem}
+  .field p{color:var(--ink-soft);font-weight:300;margin-bottom:1.2rem}
+  .field .seed-quote{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--forest);line-height:1.5;border-left:2px solid var(--forest);padding-left:1.4rem;margin:1.6rem 0}
+  @media(min-width:961px){.field-rev .field-photo{order:2}}
+  @media(max-width:960px){.field{grid-template-columns:1fr;gap:36px}}
+
+  /* impact */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--hairline);border-left:1px solid var(--hairline)}
+  .stat{border-right:1px solid var(--hairline);border-bottom:1px solid var(--hairline);background:var(--surface);padding:40px 26px;text-align:center}
+  .stat .num{font-family:var(--serif);font-weight:600;font-size:2.9rem;color:var(--brick);line-height:1}
+  .stat .lbl{margin-top:.7rem;font-size:.8rem;letter-spacing:.06em;color:var(--ink-soft)}
+  .stat .fine{display:block;font-size:.68rem;color:var(--gold);margin-top:.3rem}
+  .values-line{margin-top:3.4rem;text-align:center;font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--ink-soft)}
+  .values-line b{color:var(--ink);font-weight:600}
+  @media(max-width:760px){.stats{grid-template-columns:1fr 1fr}}
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .gallery figure{position:relative;border-radius:4px;overflow:hidden;cursor:pointer;box-shadow:var(--shadow-sm)}
+  .gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .35s ease}
+  .gallery figure:hover img{transform:scale(1.045)}
+  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 10px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:linear-gradient(transparent,rgba(30,18,10,.72));opacity:0;transition:opacity .25s}
+  .gallery figure:hover figcaption{opacity:1}
+  @media(max-width:960px){.gallery{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:640px){.gallery{grid-template-columns:1fr 1fr}}
+
+  /* involve */
+  .involve{background:linear-gradient(150deg,var(--brick),var(--brick-deep));color:#fff;border-radius:6px;padding:84px 60px;text-align:center;box-shadow:var(--shadow)}
+  .involve h2{font-size:clamp(2rem,3.8vw,2.9rem);margin:1.2rem 0 1.4rem}
+  .involve .lede{max-width:600px;margin:0 auto 2.4rem;color:#f3ded4;font-weight:300;font-size:1.05rem}
+  .involve-roles{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.6rem}
+  .involve-roles span{border:1px solid rgba(255,255,255,.35);padding:.5rem 1.2rem;border-radius:999px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+  .involve .btn-primary{background:#fff;color:var(--brick)}
+  .involve .btn-primary:hover{background:var(--paper-2)}
+  .involve .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+  .involve .btn-ghost:hover{border-color:#fff}
+  .involve-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .involve .close-line{margin-top:3rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:#eec9ba}
+
+  /* find us */
+  .find-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
+  .contact-item{padding:1.5rem 0;border-bottom:1px solid var(--hairline)}
+  .contact-item:first-child{padding-top:0}
+  .contact-item h4{font-family:var(--sans);font-weight:600;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+  .contact-item p{color:var(--ink-soft);font-weight:300;font-size:.98rem;line-height:1.7}
+  .contact-item a{color:var(--brick);font-weight:500}
+  .map-frame{border-radius:4px;overflow:hidden;border:1px solid var(--hairline);box-shadow:var(--shadow-sm);aspect-ratio:4/3;background:var(--paper-2)}
+  .map-frame iframe{width:100%;height:100%;border:0;display:block}
+  @media(max-width:960px){.find-grid{grid-template-columns:1fr;gap:36px}}
+
+  /* footer */
+  footer{background:#201610;color:#e6dbcd;padding:70px 0 34px}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;margin-bottom:44px}
+  .foot-brand{max-width:340px}
+  .foot-brand .brand{color:#fff;margin-bottom:1rem;font-size:1.25rem}
+  .foot-brand .brand img{height:38px}
+  .foot-brand p{color:#a89683;font-weight:300;font-size:.92rem}
+  .foot-brand .tag{font-family:var(--serif);font-style:italic;color:#d8b79a;font-size:1.05rem;margin-top:.8rem}
+  .foot-col h5{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#a89683;margin-bottom:1.1rem;font-weight:600}
+  .foot-col a{display:block;color:#e6dbcd;font-weight:300;font-size:.92rem;margin-bottom:.65rem;opacity:.85}
+  .foot-col a:hover{opacity:1;color:#fff}
+  .foot-bottom{border-top:1px solid #383026;padding-top:24px;color:#8b7b6a;font-size:.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-weight:300}
+
+  /* lightbox */
+  #lb{position:fixed;inset:0;background:rgba(22,13,8,.93);display:none;place-items:center;z-index:100;padding:24px}
+  #lb.open{display:grid}
+  #lb img{max-width:90vw;max-height:86vh;border-radius:4px;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  #lb .x{position:absolute;top:20px;right:30px;color:#fff;font-size:2.4rem;cursor:pointer;line-height:1;font-family:var(--serif)}
+
+  /* reveal — hidden state only when JS is active; content always visible otherwise */
+  html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  html.js .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){html.js .reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="brand"><img src="assets/images/logo-mark.png" alt="Arihant Foundation emblem"> Arihant Foundation</a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#work">The Work</a>
+      <a href="#seedbank">From the Field</a>
+      <a href="#story">Our Story</a>
+      <a href="#impact">Impact</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#find">Find Us</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#involve" class="btn btn-primary">Join Us</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home" style="padding:0">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Chhatrapati Sambhajinagar, Maharashtra · Since 2022</span>
+      <h1>Empowering communities.<br><em>Upholding justice.</em><br>Building a better future.</h1>
+      <p class="lead">In the villages and classrooms of Marathwada, a small foundation is doing quiet, patient work — standing beside women as they claim their rights, and raising children who will guard both their heritage and their future.</p>
+      <div class="hero-cta">
+        <a href="#involve" class="btn btn-primary">Join the Mission</a>
+        <a href="#story" class="btn btn-ghost">Read Our Story</a>
+      </div>
+      <div class="hero-facts">
+        <div><strong>2022</strong>Founded</div>
+        <div><strong>6</strong>Commitments</div>
+        <div><strong>17</strong>UN SDGs guiding us</div>
+      </div>
+    </div>
+    <div class="hero-stage">
+      <div class="hero-main">
+        <div class="sdg-bar"></div>
+        <img src="assets/images/arihant-photos/arihant-33.jpg" alt="Schoolchildren from the communities Arihant Foundation serves, gathered and smiling">
+      </div>
+      <div class="hero-small">
+        <img src="assets/images/arihant-photos/arihant-02.jpg" alt="Indigenous seed packets of the Community Seed Bank, held in a decorated basket">
+      </div>
+      <div class="hero-quote">
+        <p>“Strong communities create stronger democracies.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BELIEF ================= -->
+<section class="belief reveal">
+  <div class="wrap">
+    <span class="eyebrow gold" style="display:block;text-align:center">What We Believe</span>
+    <div class="rule center"></div>
+    <p class="big">A better world is not a dream to wait for. It is a choice — <em>pro-nature, pro-poor and pro-women</em> — made real by the consistent effort of ordinary people.</p>
+    <p class="sub">Arihant Foundation brings together human-rights advocates, social workers, thinkers and the youth to face inequality, poverty and climate change — not with despair, but with solutions.</p>
+  </div>
+</section>
+
+<!-- ================= THE WORK ================= -->
+<section id="work">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">The Work</span>
+      <h2>Six commitments, one mission</h2>
+      <p>Every initiative of Arihant Foundation is rooted in the same soil — justice, dignity, sustainability and collective action.</p>
+    </div>
+    <div class="work-grid reveal">
+      <div class="work-item">
+        <span class="no">01 — Legal Empowerment</span>
+        <h3>Rights that reach people</h3>
+        <p>Awareness drives and access-to-justice work, so that the law protects those it was written for — not just those who can afford it.</p>
+      </div>
+      <div class="work-item">
+        <span class="no">02 — Women's Leadership</span>
+        <h3>Women who lead</h3>
+        <p>Championing women and girls as decision-makers — in their homes, their villages and their institutions.</p>
+      </div>
+      <div class="work-item">
+        <span class="no">03 — Climate &amp; Environment</span>
+        <h3>A liveable tomorrow</h3>
+        <p>Grassroots climate action — from indigenous seed conservation to environmental justice — for a resilient, sustainable future.</p>
+      </div>
+      <div class="work-item">
+        <span class="no">04 — Youth Engagement</span>
+        <h3>Young changemakers</h3>
+        <p>Inspiring students and young people to become custodians of their communities, their heritage and their democracy.</p>
+      </div>
+      <div class="work-item">
+        <span class="no">05 — Financial Accountability</span>
+        <h3>Guarding trust</h3>
+        <p>Protecting depositor and citizen rights, and demanding transparency from the institutions people place their faith in.</p>
+      </div>
+      <div class="work-item">
+        <span class="no">06 — Ethical Governance</span>
+        <h3>People-centred power</h3>
+        <p>Advocating for accountability and integrity in governance — because strong communities deserve institutions worthy of them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FIELD STORY ================= -->
+<section class="alt" id="seedbank">
+  <div class="wrap field">
+    <div class="field-photo reveal">
+      <img src="assets/images/arihant-photos/arihant-06.jpg" alt="Children celebrating the completion of the Badak-wasti Water Initiative">
+      <div class="cap">Celebrating the Badak-wasti Water Initiative</div>
+    </div>
+    <div class="reveal">
+      <span class="kicker" style="color:#31647a;border-color:#c9dbe2;background:#eaf2f5">From the Field · Water</span>
+      <h2>The water that reopened the schools</h2>
+      <p>In Badak-wasti, the recent dry years had turned water into the village's hardest daily question. And when a village runs short of water, its schools are among the first places to go quiet.</p>
+      <p>So the foundation went to the root of the problem and established a <strong>borewell water line</strong> for the community. The water returned, and the schools reopened with it. Just as importantly, the village now has a dependable way to manage the dry months, on its own terms.</p>
+      <div class="seed-quote" style="color:#31647a;border-color:#31647a">“Water first. Everything else follows.”</div>
+    </div>
+  </div>
+
+  <div class="wrap field field-rev" style="margin-top:110px">
+    <div class="field-photo reveal">
+      <img src="assets/images/arihant-photos/arihant-03.jpg" alt="Schoolchildren at Badakwasti School holding the Community Seed Bank banner">
+      <div class="cap">Badakwasti School · Community Seed Bank Campaign</div>
+    </div>
+    <div class="reveal">
+      <span class="kicker">From the Field · Flagship Programme</span>
+      <h2>The children who guard the seeds</h2>
+      <p>At a village school in Badakwasti, a group of children recently became custodians of something older than any of us: the indigenous seeds of Indian agriculture.</p>
+      <p>Through the <strong>Arihant Community Seed Bank</strong>, they learned to collect, keep and pass on the hardy, nutritious seed varieties their grandparents farmed — seeds that resist drought, feed families, and carry a living heritage in their husks. What they experienced was more than a lesson. It was pride: the pride of becoming young guardians of their own future.</p>
+      <div class="seed-quote">“Every seed we sow carries the hope of a sustainable future.”</div>
+      <p style="font-size:.9rem">Grow resilience. Preserve heritage. Secure your future — <em>अतिशय टिकाऊ आणि पोषक बियाणे!</em></p>
+    </div>
+  </div>
+
+  <div class="wrap field" style="margin-top:110px">
+    <div class="field-photo reveal">
+      <img src="assets/images/arihant-photos/arihant-18.jpg" alt="Children gathered on the floor for an evening learning circle">
+      <div class="cap">An evening learning circle · Chhatrapati Sambhajinagar</div>
+    </div>
+    <div class="reveal">
+      <span class="kicker" style="color:var(--brick);border-color:#e9d3c3;background:#f9efe6">From the Field · Education</span>
+      <h2>Evenings where futures are written</h2>
+      <p>Across the city's neighbourhoods and village schools, Arihant's learning circles gather children onto one floor — girls and boys side by side — for lessons, stories, art, and the questions no one else has time to answer.</p>
+      <p>Some evenings end with hand-painted diyas. Some end with a shared meal. All of them end the same way: with a child who believes, a little more firmly, that their future is theirs to write.</p>
+      <div class="seed-quote" style="color:var(--brick);border-color:var(--brick)">“Education is the greatest leveler — and this generation's greatest edge.”</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY ================= -->
+<section id="story">
+  <div class="wrap story-grid">
+    <div class="reveal">
+      <span class="eyebrow">Our Story</span>
+      <h2>It began at home.</h2>
+      <p class="drop">Sangeeta Desarda grew up in a house where service was not an occasion — it was the daily weather. Her father, Professor Hiralal Desarda, was an economist who set aside position and title to devote his life to social welfare: championing farmers, fighting for water conservation, advocating tirelessly across India for the land and the people who live from it. Her mother, Shakuntala, a nutritionist, taught that sustainable food and farming could quietly transform a family's life. Their example cast a deep and lasting impression.</p>
+      <p>It followed her into the law — through more than a decade of practice at the Aurangabad Bench of the Bombay High Court, where she watched the people who most needed justice arrive least equipped to claim it.</p>
+      <p>And all the while, one truth kept sharpening: the world was not moving toward its Sustainable Development Goals — it was drifting away from them. <strong>A better world, she realised, does not happen on its own. Someone has to bring it about.</strong></p>
+      <p>So during the COVID years, she committed herself to a single question: what can ordinary people do at the grassroots that ripples into something far bigger? Her answer, in August 2022, was <strong>Arihant Foundation</strong> — a name that, in an old Indian tradition, belongs to those who conquer their inner enemies. Fear. Apathy. Indifference.</p>
+      <p>At its heart lies her deepest conviction: <strong>education is the greatest leveler</strong> — the greatest edge this generation holds. Shared equally between girls and boys, it is how she believes every crisis of sustainability, from inequality to a warming planet, will finally be solved.</p>
+    </div>
+    <aside class="founder-panel reveal">
+      <div class="founder-photo2"><img src="assets/images/leader-sangeeta.jpg" alt="Adv. Sangeeta Hiralal Desarda in her advocate's robes" onerror="this.parentElement.style.display='none'"></div>
+      <blockquote>“Leadership is not about visibility alone, but impact.”</blockquote>
+      <div class="who">
+        <div class="name">Adv. Sangeeta Hiralal Desarda</div>
+        <div class="role">Founder &amp; President<br>Advocate, Bombay High Court (Aurangabad Bench)</div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= QUOTE BAND ================= -->
+<section class="band reveal" style="padding:110px 0">
+  <div class="wrap">
+    <blockquote>“When women rise, societies transform.<br>When women lead, the world moves forward.”</blockquote>
+    <div class="attr">Adv. Sangeeta Hiralal Desarda · Founder</div>
+  </div>
+</section>
+
+<!-- ================= LEADERSHIP ================= -->
+<section id="leadership" style="padding:96px 0">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Leadership</span>
+      <h2>The people who carry it</h2>
+    </div>
+    <div class="team reveal">
+      <figure>
+        <div class="pic"><img src="assets/images/leader-sangeeta.jpg" alt="Adv. Sangeeta Hiralal Desarda" onerror="this.parentElement.style.display='none'"></div>
+        <div class="nm">Adv. Sangeeta Hiralal Desarda</div>
+        <div class="rl">Founder &amp; President</div>
+        <div class="qt">“Education is the greatest leveler we have. Shared equally between a girl and a boy, it rewrites the next hundred years.”</div>
+      </figure>
+      <figure>
+        <div class="pic"><img src="assets/images/leader-devesh.jpg" alt="Devesh Todarwal" onerror="this.parentElement.style.display='none'"></div>
+        <div class="nm">Devesh Todarwal</div>
+        <div class="rl">Vice President</div>
+        <div class="qt">“Every crisis we face, from climate to inequality, is solved earlier in a classroom than anywhere else.”</div>
+      </figure>
+      <figure>
+        <div class="pic"><img src="assets/images/leader-santosh.jpg" alt="Santosh Todarwal" onerror="this.parentElement.style.display='none'"></div>
+        <div class="nm">Santosh Todarwal</div>
+        <div class="rl">Secretary</div>
+        <div class="qt">“Real change looks small up close. One child, one lesson, one more year in school. That is how futures turn.”</div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= IMPACT ================= -->
+<section id="impact">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Impact</span>
+      <h2>What has taken root</h2>
+      <p>More than a record of activities — a reflection of people, partnerships, participation and purpose.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="num">4</div><div class="lbl">Years of grassroots work</div></div>
+      <div class="stat"><div class="num">6</div><div class="lbl">Areas of sustained commitment</div></div>
+      <div class="stat"><div class="num">200+</div><div class="lbl">Children helped</div></div>
+      <div class="stat"><div class="num">100+</div><div class="lbl">Families supported alongside</div></div>
+    </div>
+    <p class="values-line reveal">Held together by four values — <b>Justice</b>, <b>Dignity</b>, <b>Sustainability</b> and <b>Collective Action</b>.</p>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="alt" id="gallery">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">The Field Journal</span>
+      <h2>Moments that matter</h2>
+      <p>Real faces, real change — from the villages and schools of Chhatrapati Sambhajinagar.</p>
+    </div>
+    <div class="gallery reveal" id="galleryGrid">
+      <figure><img src="assets/images/arihant-photos/arihant-10.jpg" alt="Women of the Community Seed Bank holding seeds in their hands"><figcaption>Women lead the seed bank</figcaption></figure>
+      <figure><img src="assets/images/arihant-photos/arihant-24.jpg" alt="Schoolchildren holding the harvest"><figcaption>The harvest, in small hands</figcaption></figure>
+      <figure><img src="assets/images/arihant-photos/arihant-19.jpg" alt="A teaching session under the trees"><figcaption>A classroom under the trees</figcaption></figure>
+      <figure><img src="assets/images/arihant-photos/arihant-18.jpg" alt="Children gathered for an evening learning session"><figcaption>Evening learning circles</figcaption></figure>
+      <figure><img src="assets/images/arihant-photos/arihant-27.jpg" alt="Community assembly with children seated together"><figcaption>One community, together</figcaption></figure>
+      <figure><img src="assets/images/arihant-photos/arihant-16.jpg" alt="A shared meal with children of the community"><figcaption>A shared meal after lessons</figcaption></figure>
+      <figure><img src="assets/images/arihant-photos/arihant-15.jpg" alt="Women and girls standing together"><figcaption>Women and girls, side by side</figcaption></figure>
+      <figure><img src="assets/images/arihant-photos/arihant-26.jpg" alt="Elders, women and children gathered together at a community event"><figcaption>The whole community shows up</figcaption></figure>
+      <figure><img src="assets/images/arihant-photos/arihant-32.jpg" alt="Children presenting hand-painted festival lamps"><figcaption>Diyas made by young hands</figcaption></figure>
+      <figure><img src="assets/images/arihant-photos/arihant-20.jpg" alt="Hand-painted Diwali diyas on a tray"><figcaption>The Diwali diya workshop</figcaption></figure>
+      <figure><img src="assets/images/arihant-photos/arihant-21.jpg" alt="Children and volunteers being playful together"><figcaption>Joy is part of the work</figcaption></figure>
+      <figure><img src="assets/images/arihant-photos/arihant-09.jpg" alt="Students gathered at the completion of the Badak-wasti Water Initiative"><figcaption>Completion — Badak-wasti Water Initiative</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INVOLVE ================= -->
+<section id="involve">
+  <div class="wrap">
+    <div class="involve reveal">
+      <span class="eyebrow" style="color:#eec9ba">Get Involved</span>
+      <h2>Every movement begins with<br>one person who shows up.</h2>
+      <p class="lede">You don't need to be extraordinary. You need an hour, a skill, and a willing heart. Teachers, students, lawyers, professionals, retirees — there is a place for you here.</p>
+      <div class="involve-roles">
+        <span>Volunteers</span><span>Interns</span><span>Legal &amp; Social Advocates</span><span>Youth Leaders</span><span>Partners</span>
+      </div>
+      <div class="involve-cta">
+        <a href="#" id="applyBtn" class="btn btn-primary">Apply to Join</a>
+        <a href="mailto:arihantfoundation@gmail.com?subject=I%20have%20an%20idea%20for%20Arihant%20Foundation" class="btn btn-ghost">Share an Idea</a>
+      </div>
+      <p class="close-line">“Empowering the voices of tomorrow.”</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FIND US ================= -->
+<section class="alt" id="find" style="padding-top:96px">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Find Us</span>
+      <h2>Our door is open</h2>
+    </div>
+    <div class="find-grid reveal">
+      <div>
+        <div class="contact-item">
+          <h4>Where we work from</h4>
+          <p>130, Gurusahani Nagar, Sector N-4, F-1,<br>Chhatrapati Sambhajinagar (Aurangabad),<br>Maharashtra 431009, India</p>
+        </div>
+        <div class="contact-item">
+          <h4>Write to us</h4>
+          <p><a href="mailto:arihantfoundation@gmail.com">arihantfoundation@gmail.com</a></p>
+        </div>
+        <div class="contact-item">
+          <h4>Call us</h4>
+          <p><a href="tel:+919325027962">+91 93250 27962</a></p>
+        </div>
+        <div class="contact-item" style="border-bottom:none">
+          <h4>Follow the journey</h4>
+          <p><a href="https://www.facebook.com/FoundationArihant" target="_blank" rel="noopener">Facebook</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/company/arihant-foundation" target="_blank" rel="noopener">LinkedIn</a></p>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe title="Map — Arihant Foundation, 130 Gurusahani Nagar, Chhatrapati Sambhajinagar"
+          src="https://maps.google.com/maps?q=130%2C%20Gurusahani%20Nagar%2C%20Sector%20N-4%2C%20Chhatrapati%20Sambhajinagar%2C%20Maharashtra%20431009&z=15&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#home" class="brand"><img src="assets/images/logo-mark.png" alt=""> Arihant Foundation</a>
+        <p>An independent non-profit organisation dedicated to educating and empowering young women and children — and nurturing the foundation for a truly sustainable and egalitarian world.</p>
+        <p class="tag">“Empowering the voices of tomorrow.”</p>
+      </div>
+      <div class="foot-col"><h5>Explore</h5><a href="#work">The Work</a><a href="#seedbank">From the Field</a><a href="#story">Our Story</a><a href="#impact">Impact</a><a href="#gallery">Gallery</a></div>
+      <div class="foot-col"><h5>Get Involved</h5><a href="#involve">Volunteer</a><a href="mailto:arihantfoundation@gmail.com">Share an Idea</a><a href="#find">Visit Us</a></div>
+      <div class="foot-col"><h5>Connect</h5><a href="https://www.facebook.com/FoundationArihant" target="_blank" rel="noopener">Facebook</a><a href="https://www.linkedin.com/company/arihant-foundation" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:arihantfoundation@gmail.com">Email</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Arihant Foundation · Chhatrapati Sambhajinagar, Maharashtra</span>
+      <span>A non-profit organisation · Est. 11 August 2022</span>
+    </div>
+  </div>
+</footer>
+
+<div id="lb"><span class="x">&times;</span><img id="lbimg" src="" alt="Enlarged photograph"></div>
+
+<script>
+  // mobile nav
+  document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('navlinks').classList.toggle('open')});
+  document.querySelectorAll('#navlinks a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navlinks').classList.remove('open')})});
+
+  // lightbox
+  var lb=document.getElementById('lb'), lbimg=document.getElementById('lbimg');
+  document.querySelectorAll('#galleryGrid img').forEach(function(im){im.addEventListener('click',function(){lbimg.src=im.src;lb.classList.add('open')})});
+  lb.addEventListener('click',function(){lb.classList.remove('open')});
+
+  // gentle scroll reveal — plain rect checks, never traps content invisible
+  document.documentElement.classList.add('js');
+  var toReveal=Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  function checkReveals(){
+    for(var i=toReveal.length-1;i>=0;i--){
+      var r=toReveal[i].getBoundingClientRect();
+      if(r.top < window.innerHeight*0.92 && r.bottom > 0){
+        toReveal[i].classList.add('in');
+        toReveal.splice(i,1);
+      }
+    }
+  }
+  window.addEventListener('scroll',checkReveals,{passive:true});
+  window.addEventListener('resize',checkReveals);
+  window.addEventListener('load',checkReveals);
+  checkReveals();
+  // safety net: everything visible within 2.5s no matter what
+  setTimeout(function(){toReveal.forEach(function(el){el.classList.add('in')});toReveal=[];},2500);
+
+  // volunteer form link — paste your Google Form URL below
+  var GOOGLE_FORM_URL = "https://forms.gle/Q8XAzBeFzf5j6goc9";
+  var applyBtn = document.getElementById('applyBtn');
+  if(GOOGLE_FORM_URL){ applyBtn.href = GOOGLE_FORM_URL; applyBtn.target="_blank"; }
+  else { applyBtn.addEventListener('click',function(e){e.preventDefault();alert('The volunteer form link goes here — create the Google Form and paste its link into index.html (GOOGLE_FORM_URL).');}); }
+</script>
+</body>
+</html>

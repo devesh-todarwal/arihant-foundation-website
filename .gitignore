@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# editor cruft
+*.swp
+Thumbs.db
+
+# local experiments
+*.tmp
