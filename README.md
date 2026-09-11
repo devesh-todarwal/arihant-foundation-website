@@ -1,44 +1,54 @@
 # Arihant Foundation — Website
 
 The official website of **Arihant Foundation**, Chhatrapati Sambhajinagar (Aurangabad), Maharashtra —
-a non-profit founded in August 2022 by **Adv. Sangeeta Hiralal Desarda**, dedicated to educating and
-empowering young women and children and nurturing a truly sustainable and egalitarian world.
+a grassroots social-impact organisation founded in August 2022 by **Adv. Sangeeta Hiralal Desarda**,
+working with women, children, young people and communities through education, climate action,
+community resilience, legal empowerment and youth leadership.
 
 *“Empowering the voices of tomorrow.”*
 
 ## Viewing the site
 
-- **Locally:** just double-click `index.html` — it opens in any browser. No installation, no build step.
-- **Online:** the site is a single static page and can be hosted free on GitHub Pages or Netlify.
+- **Locally:** double-click `index.html` — it opens in any browser. No installation, no build step.
+- **Online:** the site is fully static and hosts free on GitHub Pages or Netlify.
 
-## What's inside
+## Pages
+
+| Page | Purpose |
+|---|---|
+| `index.html` | Homepage: mission, areas of work, principles, how we work, flagship Seed Bank, field stories, impact, gallery, story, leadership, get involved, trust, contact |
+| `founder.html` | Founder & President profile |
+| `donate.html` | Support Our Work (donation details **pending verification** — placeholders marked) |
+| `membership.html` | Become a Member (form opens a pre-addressed email) |
+| `partner.html` | Partner With Us / CSR (form opens a pre-addressed email) |
+| `reports.html` | Annual Reports & Impact |
+| `governance.html` | Transparency & Governance (registration/financials **pending verification**) |
+| `safeguarding.html` | Child Safeguarding commitment (policy document pending) |
+| `privacy.html`, `terms.html` | Privacy Policy and Terms of Use |
+
+## Shared assets
 
 | Path | What it is |
 |---|---|
-| `index.html` | The entire website — content, design and behaviour in one file |
+| `assets/style.css` | The entire design system (colours, typography, components) |
+| `assets/site.js` | Navigation, gallery filters, lightbox, reveal animation, email-composing forms |
 | `assets/images/` | Logo (`logo-mark.png`, `logo-full.png`) and leadership portraits (`leader-*.jpg`) |
-| `assets/images/arihant-photos/` | Photo library pulled from the foundation's Facebook page |
-| `QUESTIONNAIRE.md` | The content questionnaire used to build the site's story |
-| `VOLUNTEER-FORM-SETUP.md` | How the volunteer application form (Google Form → Sheet) is set up |
+| `assets/images/arihant-photos/` | Photo library from the foundation's Facebook page |
 
 ## Making common changes
 
-Everything lives in `index.html` — open it in any text editor:
+- **Text** — open the relevant page in a text editor, search for the sentence, edit in place.
+- **Photos** — gallery images are `<figure>` blocks in `index.html` (each has a `data-cat`
+  category for the filters); add new photos to `assets/images/arihant-photos/`.
+- **Volunteer form** — the Google Form link appears in `index.html` (Get Involved card) and the footer.
+- **Donation details** — fill the marked "To be provided" rows in `donate.html` once verified.
+- **Reports & policies** — add PDFs to the repo and link them from `reports.html` / `governance.html`.
 
-- **Text** — search for the sentence you want to change and edit it in place.
-- **Photos** — gallery images are `<figure>` blocks in the *Gallery* section; swap the `src`
-  to any file in `assets/images/arihant-photos/` (add new photos to that folder).
-- **Volunteer form** — the link lives in one place: the `GOOGLE_FORM_URL` variable in the
-  `<script>` block at the bottom.
-- **Contact details / address** — in the *Find Us* section.
+## Content rules (please keep)
 
-Volunteer and candidate applications arrive via the Google Form and are saved automatically
-to its linked Google Sheet (with email alerts on each submission).
-
-## The story of the site
-
-Structure: mission → belief → the work (six commitments) → three field stories
-(**water → seeds → education**) → the founder's story → leadership → impact → gallery →
-join us → find us.
+- Never describe the Foundation as a "small foundation".
+- Do not add or change impact figures without the Foundation's approval.
+- No 80G / 12A / CSR-1 / FCRA / tax-benefit claims until documents are verified.
+- Children's photographs require appropriate consent; never publish children's personal details.
 
 Built with love, for Aai's mission. 💛
