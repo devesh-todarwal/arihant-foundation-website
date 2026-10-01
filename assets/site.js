@@ -59,11 +59,37 @@
     });
   }
 
+  // site search overlay
+  var sOverlay = document.getElementById('searchOverlay');
+  var sInput = document.getElementById('searchInput');
+  var sResults = document.getElementById('searchResults');
+  function openSearch() { if (!sOverlay) return; sOverlay.classList.add('open'); sInput.value = ''; renderResults(''); sInput.focus(); }
+  function closeSearch() { if (sOverlay) sOverlay.classList.remove('open'); }
+  function renderResults(q) {
+    if (!sResults || typeof SEARCH_INDEX === 'undefined') return;
+    q = q.trim().toLowerCase();
+    var hits = SEARCH_INDEX.filter(function (e) {
+      if (!q) return true;
+      return (e.t + ' ' + e.d + ' ' + (e.k || '')).toLowerCase().indexOf(q) !== -1;
+    }).slice(0, 10);
+    sResults.innerHTML = hits.length
+      ? hits.map(function (e) { return '<a href="' + e.u + '"><div class="st">' + e.t + '</div><div class="sd">' + e.d + '</div></a>'; }).join('')
+      : '<div class="search-empty">No matches — try a different word, or explore via the menu above.</div>';
+  }
+  document.querySelectorAll('.search-btn').forEach(function (b) { b.addEventListener('click', openSearch); });
+  if (sOverlay) {
+    sInput.addEventListener('input', function () { renderResults(sInput.value); });
+    sOverlay.addEventListener('click', function (e) { if (e.target === sOverlay) closeSearch(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSearch(); });
+  }
+
   // forms that compose an email to the Foundation (no backend needed).
   // Any form with [data-mailform] and a data-subject attribute.
   document.querySelectorAll('form[data-mailform]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      var hp = form.querySelector('.hp-field input');
+      if (hp && hp.value) return; // honeypot tripped — ignore silently
       var subject = form.getAttribute('data-subject') || 'Website enquiry';
       var lines = [];
       form.querySelectorAll('input[type=text],input[type=email],input[type=tel],select,textarea').forEach(function (el) {

@@ -9,7 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=5">
+<!-- analytics slot: add a privacy-respecting analytics snippet here once approved, and disclose it in privacy.html -->
 </head>
 <body>
 
@@ -17,14 +18,68 @@
   <div class="wrap nav">
     <a href="index.html" class="brand"><img src="assets/images/logo-mark.png" alt="Arihant Foundation emblem"> Arihant Foundation</a>
     <nav class="nav-links" id="navlinks" aria-label="Main navigation">
-      <a href="index.html#work">Our Work</a>
-      <a href="index.html#field">From the Field</a>
-      <a href="index.html#impact">Impact</a>
-      <a href="index.html#gallery">Stories</a>
-      <a href="index.html#story">Our Story</a>
-      <a href="index.html#involve">Get Involved</a>
+      <div class="dd"><a href="index.html#work">Our Work</a>
+        <div class="dd-menu">
+          <a href="women-girls.html">Women &amp; Girls</a>
+          <a href="children-education.html">Children &amp; Education</a>
+          <a href="climate-environment.html">Climate &amp; Environment</a>
+          <a href="community-resilience.html">Community Resilience</a>
+          <a href="legal-empowerment.html">Legal Empowerment</a>
+          <a href="youth-leadership.html">Youth Leadership</a>
+          <a href="index.html#women-climate">Women &amp; Climate Resilience</a>
+        </div>
+      </div>
+      <div class="dd"><a href="index.html#gallery">Stories</a>
+        <div class="dd-menu">
+          <a href="index.html#gallery">Stories From the Field</a>
+          <a href="impact-stories.html">Impact Stories</a>
+          <a href="impact-stories.html#seeds">Community Seed Bank</a>
+          <a href="impact-stories.html#water">Water Initiative</a>
+          <a href="impact-stories.html#education">Learning Circles</a>
+        </div>
+      </div>
+      <div class="dd"><a href="index.html#story">About</a>
+        <div class="dd-menu">
+          <a href="index.html#story">Our Story</a>
+          <a href="index.html#purpose">Our Purpose</a>
+          <a href="index.html#leadership">Our Leadership</a>
+          <a href="founder.html">Founder &amp; President</a>
+          <a href="international.html">International Engagement</a>
+        </div>
+      </div>
+      <div class="dd"><a href="index.html#impact">Impact</a>
+        <div class="dd-menu">
+          <a href="index.html#impact">Our Impact</a>
+          <a href="index.html#methodology">Impact Methodology</a>
+          <a href="reports.html">Annual Reports &amp; Impact</a>
+        </div>
+      </div>
+      <div class="dd"><a href="research.html">Knowledge</a>
+        <div class="dd-menu">
+          <a href="research.html">Research, Knowledge &amp; Policy</a>
+          <a href="research.html#publications">Publications</a>
+        </div>
+      </div>
+      <div class="dd"><a href="governance.html">Trust</a>
+        <div class="dd-menu">
+          <a href="governance.html">Transparency &amp; Governance</a>
+          <a href="safeguarding.html">Child Safeguarding</a>
+          <a href="governance.html#policies">Policies &amp; Disclosures</a>
+        </div>
+      </div>
+      <div class="dd"><a href="index.html#involve">Get Involved</a>
+        <div class="dd-menu">
+          <a href="donate.html">Donate</a>
+          <a href="membership.html">Become a Member</a>
+          <a href="https://forms.gle/Q8XAzBeFzf5j6goc9" target="_blank" rel="noopener">Volunteer</a>
+          <a href="membership.html">Youth Leadership</a>
+          <a href="partner.html">Partner With Us</a>
+        </div>
+      </div>
+      <a href="index.html#find">Contact</a>
     </nav>
     <div class="nav-cta">
+      <button class="search-btn" aria-label="Search the site">&#8981;</button>
       <a href="donate.html" class="btn btn-primary">Donate</a>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     </div>
@@ -58,13 +113,38 @@
       <div class="doc"><div><div class="t">Financial statements</div><div class="d">Approved financial and audit documents will be published here.</div></div><span class="tbd">To be published after approval</span></div>
     </div>
 
-    <div class="head reveal" style="margin-top:56px"><span class="eyebrow">Policies</span><h2>Our policies</h2></div>
+    <div class="head reveal" style="margin-top:56px" id="policies"><span class="eyebrow">Policies</span><h2>Policies &amp; disclosures</h2></div>
     <div class="doc-list reveal">
       <div class="doc"><div><div class="t">Child Safeguarding Policy</div></div><a class="textlink" href="safeguarding.html">Our commitment &rarr;</a></div>
       <div class="doc"><div><div class="t">Volunteer Code of Conduct</div></div><span class="tbd">Being finalised</span></div>
       <div class="doc"><div><div class="t">Conflict of Interest Policy</div></div><span class="tbd">Being finalised</span></div>
       <div class="doc"><div><div class="t">Grievance Redressal</div></div><span class="tbd">Being finalised</span></div>
       <div class="doc"><div><div class="t">Privacy &amp; Data Protection</div></div><a class="textlink" href="privacy.html">Read &rarr;</a></div>
+    </div>
+
+    <div class="head reveal" style="margin-top:56px"><span class="eyebrow">Cross-Cutting Governance Themes</span><h2>Accountability runs through everything</h2></div>
+    <div class="gov-themes reveal">
+      <div class="gov-theme">
+        <h3>Financial Accountability</h3>
+        <p class="gl">Public resources and financial institutions must remain accountable to the people they serve.</p>
+        <ul>
+          <li>Financial awareness</li>
+          <li>Depositor rights</li>
+          <li>Transparency</li>
+          <li>Institutional accountability</li>
+        </ul>
+      </div>
+      <div class="gov-theme">
+        <h3>Ethical Governance</h3>
+        <p class="gl">Strong institutions are built on accountability.</p>
+        <ul>
+          <li>Good governance</li>
+          <li>Transparency</li>
+          <li>Responsible decision-making</li>
+          <li>Institutional responsibility</li>
+          <li>Accountability</li>
+        </ul>
+      </div>
     </div>
 
     <div class="head reveal" style="margin-top:56px"><span class="eyebrow">Reports</span><h2>Reports</h2></div>
@@ -79,16 +159,17 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="index.html" class="brand"><img src="assets/images/logo-mark.png" alt=""> Arihant Foundation</a>
-        <p>Arihant Foundation is an independent non-profit organisation committed to empowering communities through education, equality, sustainability, legal empowerment and collective action.</p>
+        <p>Arihant Foundation is a public charitable organisation committed to empowering communities through education, equality, sustainability, legal empowerment and collective action.</p>
         <p class="tag">&ldquo;Empowering the voices of tomorrow.&rdquo;</p>
       </div>
       <div class="foot-col"><h5>Explore</h5>
         <a href="index.html">Home</a>
         <a href="index.html#work">Our Work</a>
-        <a href="index.html#field">From the Field</a>
-        <a href="index.html#story">Our Story</a>
-        <a href="index.html#impact">Impact</a>
         <a href="index.html#gallery">Stories From the Field</a>
+        <a href="impact-stories.html">Impact Stories</a>
+        <a href="index.html#story">Our Story</a>
+        <a href="research.html">Research &amp; Policy</a>
+        <a href="international.html">International Engagement</a>
       </div>
       <div class="foot-col"><h5>Get Involved</h5>
         <a href="donate.html">Donate</a>
@@ -101,6 +182,7 @@
         <a href="reports.html">Annual Reports</a>
         <a href="governance.html">Transparency &amp; Governance</a>
         <a href="safeguarding.html">Child Safeguarding</a>
+        <a href="governance.html#policies">Policies &amp; Disclosures</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Use</a>
       </div>
@@ -117,6 +199,14 @@
   </div>
 </footer>
 
-<script src="assets/site.js"></script>
+<div id="searchOverlay" role="dialog" aria-label="Site search">
+  <div class="search-panel">
+    <input id="searchInput" type="text" placeholder="Search programmes, stories, reports&hellip;" aria-label="Search this website">
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<script src="assets/search-index.js?v=3"></script>
+<script src="assets/site.js?v=3"></script>
 </body>
 </html>
