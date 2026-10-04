@@ -32,8 +32,12 @@ community resilience, legal empowerment and youth leadership.
 `assets/style.css` (design system) · `assets/site.js` (nav, search, filters, lightbox, forms) ·
 `assets/search-index.js` (site search entries — **add new pages here**) · `assets/images/`
 
-**Cache versioning:** stylesheet/script links carry `?v=N`. When you change CSS/JS, bump the number
-in all pages (`sed -i '' 's/v=5/v=6/g' *.html`) so visitors' browsers fetch the new files.
+**Cache versioning:** stylesheet/script links carry `?v=N` (currently `v=7`). When you change CSS/JS,
+bump the number in all pages (`sed -i '' 's/v=7/v=8/g' *.html`) so visitors' browsers fetch the new files.
+
+**Mobile:** verified at 375px across all pages — compact header (emblem + search + Donate + menu),
+grouped accordion menu, always-visible photo captions on touch devices, single-column cards and
+full-width forms. If you add sections, test at phone width before publishing.
 
 ## Security (static architecture)
 
